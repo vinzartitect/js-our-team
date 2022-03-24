@@ -8,36 +8,69 @@
 // BONUS: stilizziamo la sezione realizzando le card di ciascun membro del team, come nel mockup allegato.
 
 // creazione array di oggetti
-let team = [
+let listaTeam = [
     {
-        nome: 'Wayne Barnett',
-        ruolo: 'Founder & CEO',
-        foto: 'img/wayne-barnett-founder-ceo.jpg',
+        'Nome' : 'Wayne Barnett',
+        'Ruolo' : 'Founder & CEO',
+        'Foto' : 'wayne-barnett-founder-ceo.jpg',
     },
     {
-        nome: 'Angela Caroll',
-        ruolo: 'Chief Editor',
-        foto: 'img/angela-caroll-chief-editor.jpg',
+        'Nome' : 'Angela Caroll',
+        'Ruolo' : 'Chief Editor',
+        'Foto' : './angela-caroll-chief-editor.jpg',
     },
     {
-        nome: 'Walter Gordon',
-        ruolo: 'Office Manager',
-        foto: 'img/walter-gordon-office-manager.jpg',
+        'Nome' : 'Walter Gordon',
+        'Ruolo' : 'Office Manager',
+        'Foto' : './walter-gordon-office-manager.jpg',
     },
     {
-        nome: 'Angela Lopez',
-        ruolo: 'Social Media Manager',
-        foto: 'img/angela-lopez-social-media-manager.jpg',
+        'Nome' : 'Angela Lopez',
+        'Ruolo' : 'Social Media Manager',
+        'Foto' : './angela-lopez-social-media-manager.jpg',
     },
     {
-        nome: 'Scott Estrada',
-        ruolo: 'Developer',
-        foto: 'img/scott-estrada-developer.jpg',
+        'Nome' : 'Scott Estrada',
+        'Ruolo' : 'Developer',
+        'Foto' : './scott-estrada-developer.jpg',
     },
     {
-        nome: 'Barbara Ramos',
-        ruolo: 'Graphic Designer',
-        foto: 'img/barbara-ramos-graphic-designer.jpg',
+        'Nome' : 'Barbara Ramos',
+        'Ruolo' : 'Graphic Designer',
+        'Foto' : './barbara-ramos-graphic-designer.jpg',
     }
 ];
 
+console.log(listaTeam);
+
+console.log(listaTeam[0].Nome);
+
+// metodo per stampare tutti i valori
+for ( let i = 0; i < listaTeam.length; i++ ) {
+
+    for ( let key in listaTeam[i]) {
+
+        console.log(listaTeam[i][key]);
+        console.log(key);
+
+    }
+}
+
+
+
+// metedo per stampare a video tutte le info
+for ( let i = 0; i < listaTeam.length; i++ ) {
+
+    document.getElementById("teamContainer").innerHTML +=
+    `
+    <div class="card mb-5">
+       <img src="./asset/img/${listaTeam[i]["Foto"]}" class="card-img-top" alt="...">
+       <div class="card-body">
+          <h5 class="card-title">${listaTeam[i]["Nome"]}</h5>
+          <p class="card-text">${listaTeam[i]["Ruolo"]}</p>
+       </div>
+    </div>    
+    
+    `;
+
+}
